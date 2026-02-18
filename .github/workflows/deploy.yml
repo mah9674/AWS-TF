@@ -43,3 +43,12 @@ jobs:
       - name: Terraform Apply (EC2)
         working-directory: ec2
         run: terraform apply -auto-approve
+
+         # -------- S3 --------
+      - name: Terraform Init S3
+        working-directory: s3
+        run: terraform init
+
+      - name: Terraform Apply S3
+        working-directory: s3
+        run: terraform apply -auto-approve
