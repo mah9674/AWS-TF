@@ -35,3 +35,11 @@ resource "aws_s3_bucket_public_access_block" "block1" {
   ignore_public_acls      = true
   restrict_public_buckets = true
 }
+
+resource "aws_s3_object" "index" {
+  bucket = aws_s3_bucket.demo.id
+  key    = "index.html"
+  source = "index.html"
+  etag   = filemd5("index.html")
+  content_type = "text/html"
+}
