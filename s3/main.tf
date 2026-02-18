@@ -19,15 +19,15 @@ resource "aws_s3_bucket_public_access_block" "block" {
   restrict_public_buckets = true
 }
 
-resource "aws_s3_bucket" "demo" {
-  bucket = "mah-demo-bucket-200488"
+resource "aws_s3_bucket" "demo1" {
+  bucket = "mah-demo1-bucket-200488"
 
   tags = {
     Name = "mah-demo-bucket"
   }
 }
 
-resource "aws_s3_bucket_public_access_block" "block" {
+resource "aws_s3_bucket_public_access_block" "block1" {
   bucket = aws_s3_bucket.demo.id
 
   block_public_acls       = true
